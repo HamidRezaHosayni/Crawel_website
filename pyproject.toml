@@ -1,0 +1,31 @@
+[project]
+name = "web-crawler"
+version = "1.0.0"
+description = "Professional Web Crawler for Dataset Collection"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+    "integration: marks tests as integration tests (deselect with '-m \"not integration\"')",
+    "unit: marks tests as unit tests",
+]
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["app"]
+omit = [
+    "tests/*",
+    "app/main.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]
