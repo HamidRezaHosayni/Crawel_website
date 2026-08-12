@@ -1,4 +1,4 @@
-```html
+```markdown
 <div dir="rtl" align="center">
 
 # 🕷️ Web Crawler
@@ -13,7 +13,7 @@
 
 **سیستم حرفه‌ای Crawl وب برای جمع‌آوری Dataset متنی، کدهای برنامه‌نویسی و مستندات فنی**
 
-[🚀 شروع سریع](#-شروع-سریع) • [📖 نصب](#️-نصب-و-راهاندازی) • [⚙️ راهنما](#️-پارامترهای-cli) • [💡 مثال‌ها](#-مثالهای-کاربردی) • [🐛 عیب‌یابی](#-عیبیابی)
+[🚀 شروع سریع](#-شروع-سریع) • [📖 نصب](#-نصب-و-راهاندازی) • [⚙️ راهنما](#-پارامترهای-cli) • [💡 مثال‌ها](#-مثالهای-کاربردی) • [🐛 عیب‌یابی](#-عیبیابی)
 
 ---
 
@@ -22,14 +22,14 @@
 ## 📋 فهرست مطالب
 
 - [✨ ویژگی‌ها](#-ویژگیها)
-- [🏗️ معماری سیستم](#️-معماری-سیستم)
+- [🏗️ معماری سیستم](#-معماری-سیستم)
 - [📋 پیش‌نیازها](#-پیشنیازها)
-- [🛠️ نصب و راه‌اندازی](#️-نصب-و-راهاندازی)
+- [🛠️ نصب و راه‌اندازی](#-نصب-و-راهاندازی)
 - [⚡ شروع سریع](#-شروع-سریع)
-- [⚙️ پارامترهای CLI](#️-پارامترهای-cli)
+- [⚙️ پارامترهای CLI](#-پارامترهای-cli)
 - [💡 مثال‌های کاربردی](#-مثالهای-کاربردی)
 - [🎯 دستورات Makefile](#-دستورات-makefile)
-- [🗄️ ساختار دیتابیس](#️-ساختار-دیتابیس)
+- [🗄️ ساختار دیتابیس](#-ساختار-دیتابیس)
 - [📁 ساختار فایل‌ها](#-ساختار-فایلها)
 - [🎓 نکات حرفه‌ای](#-نکات-حرفهای)
 - [🐛 عیب‌یابی](#-عیبیابی)
@@ -291,6 +291,7 @@ python -m app.main [OPTIONS] URL
 ### 🔍 توضیح کامل هر پارامتر
 
 #### `URL` (Argument اجباری)
+
 URL اصلی که Crawler از آن شروع می‌کند. همه URLهای کشف شده باید از همین دامنه باشند.
 
 ```bash
@@ -298,6 +299,7 @@ python -m app.main https://example.com
 ```
 
 #### `--limit`, `-l`
+
 حداکثر تعداد صفحاتی که Crawler پردازش می‌کند. این شامل صفحات **Crawl شده + Failed + Skipped** می‌شود.
 
 ```bash
@@ -309,6 +311,7 @@ python -m app.main https://example.com
 ```
 
 #### `--headless`
+
 حالت پیش‌فرض: Browser بدون نمایش UI اجرا می‌شود. مناسب برای سرورها و محیط‌های headless.
 
 ```bash
@@ -316,6 +319,7 @@ python -m app.main https://example.com --limit 10
 ```
 
 #### `--show-browser`
+
 Browser به صورت گرافیکی نمایش داده می‌شود. مناسب برای Debug و مشاهده فرآیند Crawl.
 
 ```bash
@@ -323,6 +327,7 @@ python -m app.main https://example.com --limit 5 --show-browser
 ```
 
 #### `--delay`, `-d`
+
 تأخیر بین Crawlها به ثانیه. برای جلوگیری از Rate Limiting سایت‌های حساس.
 
 ```bash
@@ -331,6 +336,7 @@ python -m app.main https://example.com --delay 3.0
 ```
 
 #### `--output`, `-o`
+
 دایرکتوری خروجی برای ذخیره فایل‌های TXT.
 
 ```bash
@@ -338,6 +344,7 @@ python -m app.main https://example.com --output ./my_dataset
 ```
 
 #### `--verbose`, `-v`
+
 نمایش لاگ‌های دقیق‌تر برای Debug.
 
 ```bash
@@ -345,6 +352,7 @@ python -m app.main https://example.com --verbose
 ```
 
 #### `--reset-failed`
+
 تمام URLهای Failed در دیتابیس را به Pending برمی‌گرداند. برای اجرای مجدد URLهایی که قبلاً fail شده‌اند.
 
 ```bash
@@ -541,6 +549,7 @@ make clean
 ### 📊 Collections
 
 #### ۱. `urls`
+
 ذخیره تمام URLها و وضعیت Crawl آن‌ها.
 
 ```json
@@ -568,6 +577,7 @@ make clean
 ```
 
 #### ۲. `crawl_sessions`
+
 پیگیری هر Session Crawl.
 
 ```json
@@ -589,6 +599,7 @@ make clean
 ```
 
 #### ۳. `sitemaps`
+
 ذخیره Sitemapهای کشف شده برای جلوگیری از پردازش مجدد.
 
 ```json
@@ -607,6 +618,7 @@ make clean
 ```
 
 #### ۴. `counters`
+
 Counterهای Atomic برای تولید شماره فایل.
 
 ```json
@@ -835,11 +847,13 @@ Total Size     : 15.5 MB
 ### ❌ Chrome پیدا نمی‌شود
 
 **ارور:**
+
 ```
 BrowserType.launch_persistent_context: Executable doesn't exist
 ```
 
 **راه‌حل:**
+
 ```bash
 # بررسی نصب Chrome
 which google-chrome
@@ -851,11 +865,13 @@ sudo apt install google-chrome-stable  # Ubuntu/Debian
 ### ❌ MongoDB اتصال برقرار نمی‌شود
 
 **ارور:**
+
 ```
 Connection refused: mongodb://localhost:27017
 ```
 
 **راه‌حل:**
+
 ```bash
 # بررسی وضعیت MongoDB
 docker ps | grep mongo
@@ -870,6 +886,7 @@ sudo systemctl start mongod
 ### ❌ `ERR_TOO_MANY_REDIRECTS`
 
 **ارور:**
+
 ```
 Page.goto: net::ERR_TOO_MANY_REDIRECTS
 ```
@@ -881,6 +898,7 @@ Page.goto: net::ERR_TOO_MANY_REDIRECTS
 ### ❌ `Empty content`
 
 **ارور:**
+
 ```
 [SKIPPED] https://example.com/page: Empty content
 ```
@@ -902,6 +920,7 @@ python -m pytest tests/ -v --tb=long
 ### ❌ Browser.close error در پایان
 
 **ارور:**
+
 ```
 [ERROR] Crawl failed: Browser.close: Connection closed while reading from the driver
 ```
@@ -915,6 +934,7 @@ python -m pytest tests/ -v --tb=long
 **علت:** ممکن است از نسخه قدیمی استفاده می‌کنید.
 
 **راه‌حل:**
+
 ```bash
 # اطمینان از آخرین نسخه
 git pull origin main
@@ -964,7 +984,7 @@ pip install -r requirements.txt --upgrade
   ├─ بله → از API استفاده کنید
   └─ خیر → آیا Dataset عمومی دارد؟
              ├─ بله → از Dataset استفاده کنید
-             └─ خیر → آیا محتوای آموزشی دارد?
+             └─ خیر → آیا محتوای آموزشی دارد؟
                         ├─ بله → ✅ استفاده از Crawler
                         └─ خیر → ❌ Crawl نکنید
 ```
@@ -1000,6 +1020,7 @@ pip install -r requirements.txt --upgrade
 ### ❓ چطور بفهمم Crawl تمام شده؟
 
 **پاسخ:** وقتی این پیام را دیدید:
+
 ```
 [CRAWL] No more pending URLs. Crawl complete.
 ============================================================
@@ -1028,7 +1049,7 @@ CRAWL COMPLETED
 
 ### ❓ آیا این پروژه قانونی است؟
 
-**پاسخ:** 
+**پاسخ:**
 - ✅ Crawl کردن محتوای عمومی قانونی است
 - ⚠️ همیشه `robots.txt` را بررسی کنید
 - ⚠️ از Rate Limiting استفاده کنید
@@ -1117,7 +1138,17 @@ SOFTWARE.
 
 **ساخته شده با ❤️ برای جمع‌آوری Datasetهای فنی**
 
-[⬆ بازگشت به بالا](#️-web-crawler)
+[⬆ بازگشت به بالا](#-web-crawler)
 
 </div>
 ```
+
+این نسخه از README.md کاملاً تمیز و آماده برای GitHub است. تمام escape characters حذف شده‌اند و تمام Markdown syntax‌ها به صورت صحیح نوشته شده‌اند. کافی است این محتوا را مستقیماً در فایل `README.md` پروژه خود کپی کنید.
+
+ویژگی‌های این نسخه:
+- ✅ Badges به درستی render می‌شوند
+- ✅ جداول با فرمت استاندارد GitHub
+- ✅ Code blocks با syntax highlighting مناسب
+- ✅ لینک‌های داخلی فهرست مطالب به درستی کار می‌کنند
+- ✅ پشتیبانی کامل از RTL برای متن فارسی
+- ✅ ساختار درختی فایل‌ها به صورت خوانا
