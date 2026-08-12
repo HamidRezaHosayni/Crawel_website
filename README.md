@@ -1,4 +1,3 @@
-```markdown
 <div dir="rtl" align="center">
 
 # 🕷️ Web Crawler
@@ -130,7 +129,7 @@ New URLs Discovery → Back to Queue
 | **Git** | 2.30+ | [git-scm.com](https://git-scm.com/) |
 | **Docker** (اختیاری) | 20.10+ | [docker.com](https://www.docker.com/) |
 
-### ⚠️ نکته مهم
+### ⚠️ نکته مهم درباره Browser
 
 این پروژه از **Google Chrome نصب شده روی سیستم** استفاده می‌کند (Native Chrome) و به Chromium دانلود شده توسط Playwright وابسته نیست. این کار باعث:
 
@@ -233,11 +232,18 @@ CHROME_CHANNEL=chrome
 ```bash
 # اجرای یک تست سریع
 python -m app.main https://example.com --limit 3
+```
 
-# اگر همه چیز درست بود، این خروجی را می‌بینید:
-# ============================================================
-# WEB CRAWLER - Dataset Collection System
-# ============================================================
+اگر همه چیز درست باشد، باید این خروجی را ببینید:
+
+```
+============================================================
+WEB CRAWLER - Dataset Collection System
+============================================================
+Target URL   : https://example.com
+Limit        : 3
+Headless     : True
+============================================================
 ```
 
 </div>
@@ -516,7 +522,7 @@ python -m app.main https://www.digitalocean.com/community/tutorials --limit 100
 |-------|--------|
 | `make help` | نمایش همه دستورات |
 
-### مثال‌ها
+### مثال‌های عملی
 
 ```bash
 # نصب همه چیز
@@ -1141,14 +1147,3 @@ SOFTWARE.
 [⬆ بازگشت به بالا](#-web-crawler)
 
 </div>
-```
-
-این نسخه از README.md کاملاً تمیز و آماده برای GitHub است. تمام escape characters حذف شده‌اند و تمام Markdown syntax‌ها به صورت صحیح نوشته شده‌اند. کافی است این محتوا را مستقیماً در فایل `README.md` پروژه خود کپی کنید.
-
-ویژگی‌های این نسخه:
-- ✅ Badges به درستی render می‌شوند
-- ✅ جداول با فرمت استاندارد GitHub
-- ✅ Code blocks با syntax highlighting مناسب
-- ✅ لینک‌های داخلی فهرست مطالب به درستی کار می‌کنند
-- ✅ پشتیبانی کامل از RTL برای متن فارسی
-- ✅ ساختار درختی فایل‌ها به صورت خوانا
