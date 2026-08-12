@@ -151,7 +151,7 @@ New URLs Discovery → Back to Queue
 ### مرحله ۱: Clone کردن پروژه
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/web-crawler.git
+git clone https://github.com/HamidRezaHosayni/Crawel_website.git
 cd web-crawler
 ```
 
